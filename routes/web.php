@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Services;
+use App\Models\Testimonial;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $services = Services::all();
+    $testimonial = Testimonial::all();
+    return view('index', compact('services', 'testimonial'));
 });
 
 Route::get('/about', function () {
