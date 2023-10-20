@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Models\Message;
 use App\Models\Services;
 use App\Models\Testimonial;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +15,7 @@ use App\Models\Testimonial;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     $services = Services::all();
@@ -31,4 +33,15 @@ Route::get('/contact', function () {
 
 Route::get('/service', function () {
     return view('service');
+});
+
+Route::post('/save-contact', function (Request $request) {
+    //  return $request;
+    Message::create($request->all());
+// rediret with success message back to contact page after saving
+// show success message
+    Session::flash('success', 'Message saved successfully');
+
+    // Redirect back with the success message
+    return redirect()->back();
 });

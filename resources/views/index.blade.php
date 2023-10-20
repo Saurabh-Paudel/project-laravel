@@ -1,5 +1,11 @@
 @extends('app')
-
+@section('styles')
+    <style>
+        .contact_section input {
+            color: black;
+        }
+    </style>
+@endsection
 @section('content')
     <!-- end header section -->
     <!-- slider section -->
@@ -228,7 +234,7 @@
                                 </div>
                                 <div class="client_text">
                                     <p>
-                                            {{ $item->feedback }}
+                                        {{ $item->feedback }}
                                     </p>
                                 </div>
                             </div>
@@ -254,18 +260,25 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <form action="">
+                    <form action="save-contact" method="POST">
                         <div>
-                            <input type="text" placeholder="Name" />
+                            @if (Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{ Session::get('success') }}
+                            @endif
+                        </div>
+                        @csrf
+                        <div>
+                            <input type="text" placeholder="Name" name="name" />
                         </div>
                         <div>
-                            <input type="text" placeholder="Phone Number" />
+                            <input type="text" placeholder="Phone Number" name="phone_number" />
                         </div>
                         <div>
-                            <input type="email" placeholder="Email" />
+                            <input type="email" placeholder="Email" name="email" />
                         </div>
                         <div>
-                            <input type="text" class="message-box" placeholder="Message" />
+                            <input type="text" class="message-box" placeholder="Message" name="message" />
                         </div>
                         <div class="d-flex ">
                             <button>
