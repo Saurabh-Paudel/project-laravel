@@ -229,7 +229,6 @@
                                 <div class="client_text">
                                     <p>
                                             {{ $item->feedback }}
-
                                     </p>
                                 </div>
                             </div>

@@ -1,4 +1,11 @@
 @extends('app')
+@section('styles')
+    <style>
+        .contact_section input {
+            color: black;
+        }
+    </style>
+@endsection
 @section('content')
   <section class="contact_section layout_padding">
     <div class="container">

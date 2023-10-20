@@ -26,6 +26,7 @@
   <!-- responsive style -->
   <link href="assets/css/responsive.css" rel="stylesheet" />
 
+@yield('styles')
 </head>
 <div class="hero_area">
     <!-- header section strats -->
