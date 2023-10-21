@@ -261,12 +261,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <form action="save-contact" method="POST">
-                        <div>
-                            @if (Session::has('success'))
-                                <div class="alert alert-success">
-                                    {{ Session::get('success') }}
-                            @endif
-                        </div>
+
+                        @if (Session::has('success'))
+                            <div class="alert alert-success">
+                                {{ Session::get('success') }}
+                            </div>
+                        @endif
                         @csrf
                         <div>
                             <input type="text" placeholder="Name" name="name" />
