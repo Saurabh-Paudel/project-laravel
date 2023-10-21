@@ -37,7 +37,7 @@ Route::get('/service', function () {
 
 Route::post('/save-contact', function (Request $request) {
     //  return $request;
-    Message::create($request->all());
+    
 // rediret with success message back to contact page after saving
 // show success message
     Session::flash('success', 'Message saved successfully');
