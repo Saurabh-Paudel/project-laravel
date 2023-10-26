@@ -37,11 +37,28 @@ Route::get('/service', function () {
 
 Route::post('/save-contact', function (Request $request) {
     //  return $request;
-    
+
 // rediret with success message back to contact page after saving
 // show success message
     Session::flash('success', 'Message saved successfully');
 
     // Redirect back with the success message
     return redirect()->back();
+});
+
+//----------------------- admin dashboard--------------------//
+
+Route::get('admin/dashboard', function () {
+  $messagecount = Message::count();
+ return view('admin.dashboard',compact('messagecount'));
+});
+
+Route::get('/admin/message', function () {
+ $message = Message::all();
+ return view('admin.message',compact('message'));
+});
+
+Route::get('/admin/service', function () {
+ $service = Services::all();
+ return view('admin.service',compact('service'));
 });
