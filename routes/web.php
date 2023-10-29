@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ServiceController;
 use App\Models\Message;
 use App\Models\Services;
 use App\Models\Testimonial;
@@ -49,16 +49,16 @@ Route::post('/save-contact', function (Request $request) {
 //----------------------- admin dashboard--------------------//
 
 Route::get('admin/dashboard', function () {
-  $messagecount = Message::count();
- return view('admin.dashboard',compact('messagecount'));
+    $messagecount = Message::count();
+    $servicecount = Services::count(); // count number entries in table
+    return view('admin.dashboard', compact('messagecount', 'servicecount'));
 });
 
 Route::get('/admin/message', function () {
- $message = Message::all();
- return view('admin.message',compact('message'));
+    $message = Message::all(); // fetch data from database
+    return view('admin.message', compact('message'));
 });
 
-Route::get('/admin/service', function () {
- $service = Services::all();
- return view('admin.service',compact('service'));
-});
+Route::get('/admin/service', [ServiceController::class, 'index']);
+Route::get('/admin/service/{id}/edit', [ServiceController::class, 'edit']);
+Route::post('/admin/service/{id}/update', [ServiceController::class, 'update']);

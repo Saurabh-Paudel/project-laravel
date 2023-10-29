@@ -8,7 +8,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Messages</h3>
+                            <h3 class="card-title">Messages</h3>+
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0" style="height: 300px;">
@@ -24,15 +24,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-@foreach ($message as $item)
-                                    <tr>
-                                        <td>{{ $item->id }}</td>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->phone_number }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->message }}</td>
-                                    </tr>
-@endforeach
+                                    @foreach ($message as $item)
+                                        <tr>
+                                            <td>{{ $item->id }}</td>
+                                            <td>{{ $item->name }}</td>
+                                            <td>{{ $item->phone_number }}</td>
+                                            <td>{{ $item->email }}</td>
+                                            <td>{{ $item->message }}</td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

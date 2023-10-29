@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -77,9 +81,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="../../index3.html" class="brand-link">
-                <img src="/admin/img/AdminLTELogo.png" alt="AdminLTE Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
+            <a href="/admin/index3.html" class="brand-link">
+                <img src="/admin/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                    style="opacity: .8">
                 <span class="brand-text font-weight-light">Admin Panel</span>
             </a>
 
@@ -118,7 +122,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="service" class="nav-link">
+                            <a href="/admin/service/" class="nav-link">
                                 <i class="fa-solid fa-gear"></i>
                                 <p>
                                     Service
@@ -192,6 +196,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
         integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- DataTables  & Plugins -->
+    <script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="/admin/plugins/jszip/jszip.min.js"></script>
+    <script src="/admin/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="/admin/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="/admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    @yield('script')
 </body>
 
 </html>
