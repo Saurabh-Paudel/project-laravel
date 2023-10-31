@@ -23,18 +23,35 @@
                                 {{ Session::get('success') }}
                             </div>
                         @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         @csrf
                         <div>
-                            <input type="text" placeholder="Name" name="name" />
+                            <input type="text" placeholder="Name" name="name" value="{{ old('name') }}"
+                                @error('name')style="border: 1px solid red;" @enderror />
                         </div>
                         <div>
-                            <input type="text" placeholder="Phone Number" name="phone_number" />
+                            <input type="text" placeholder="Phone Number" name="phone_number"
+                                value="{{ old('phone_number') }}"
+                                @error('phone_number')style="border: 1px solid red;" @enderror />
                         </div>
                         <div>
-                            <input type="email" placeholder="Email" name="email" />
+                            <input type="email" placeholder="Email" name="email" value="{{ old('email') }}"
+                                @error('email')style="border: 1px solid red;" @enderror />
+
                         </div>
                         <div>
-                            <input type="text" class="message-box" placeholder="Message" name="message" />
+                            <input type="text" class="message-box" placeholder="Message" name="message"
+                                value="{{ old('message') }}" @error('message')style="border: 1px solid red;" @enderror />
+
                         </div>
                         <div class="d-flex ">
                             <button>

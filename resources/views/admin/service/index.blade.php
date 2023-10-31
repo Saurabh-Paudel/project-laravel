@@ -14,6 +14,11 @@
                             <li class="breadcrumb-item active">Services</li>
                         </ol>
                     </div>
+                    <button class="btn btn-success mt-2 ml-2">
+                        <a href="/admin/service/add-service" class=" text-white text-decoration-none"><i
+                                class="fas fa-plus"></i>
+                            Add</a>
+                    </button>
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -48,8 +53,10 @@
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->description }}</td>
-                                                <td><a href="/admin/service/{{ $item->id }}/edit" class="btn btn-primary">Edit</a>&nbsp;<a
-                                                        href="" class="btn btn-danger">Danger</a></td>
+                                                <td><a href="/admin/service/{{ $item->id }}/edit"
+                                                        class="btn btn-primary">Edit</a>&nbsp;<a
+                                                        href="/admin/service/{{ $item->id }}/delete"
+                                                        class="btn btn-danger">Delete</a></td>
                                             </tr>
                                         @endforeach
                                     </tbody>

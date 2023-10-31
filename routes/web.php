@@ -1,9 +1,8 @@
 <?php
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ServiceController;
-use App\Models\Message;
-use App\Models\Services;
-use App\Models\Testimonial;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,48 +16,25 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    $services = Services::all();
-    $testimonial = Testimonial::all();
-    return view('index', compact('services', 'testimonial'));
-});
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/service', function () {
-    return view('service');
-});
-
-Route::post('/save-contact', function (Request $request) {
-    //  return $request;
-
-// rediret with success message back to contact page after saving
-// show success message
-    Session::flash('success', 'Message saved successfully');
-
-    // Redirect back with the success message
-    return redirect()->back();
-});
+Route::get('/', [FrontendController::class, 'index']);
+Route::get('/about', [FrontendController::class, 'about']);
+Route::get('/contact', [FrontendController::class, 'contact']);
+Route::get('/service', [FrontendController::class, 'service']);
+Route::post('/save-contact', [FrontendController::class, 'save_contact']);
 
 //----------------------- admin dashboard--------------------//
 
-Route::get('admin/dashboard', function () {
-    $messagecount = Message::count();
-    $servicecount = Services::count(); // count number entries in table
-    return view('admin.dashboard', compact('messagecount', 'servicecount'));
-});
-
-Route::get('/admin/message', function () {
-    $message = Message::all(); // fetch data from database
-    return view('admin.message', compact('message'));
-});
-
+//----------------------- admin homepage--------------------//
+Route::get('admin/dashboard', [DashboardController::class, 'index']);
+//----------------------- messages--------------------//
+Route::get('/admin/message', [MessageController::class, 'index']);
+Route::get('/admin/message/{id}/delete', [MessageController::class, 'delete']);
+//----------------------- Services--------------------//
 Route::get('/admin/service', [ServiceController::class, 'index']);
 Route::get('/admin/service/{id}/edit', [ServiceController::class, 'edit']);
+Route::get('/admin/service/{id}/delete', [ServiceController::class, 'delete']);
 Route::post('/admin/service/{id}/update', [ServiceController::class, 'update']);
+Route::get('/admin/service/add-service', [ServiceController::class, 'create']);
+Route::post('/admin/service/adding-service', [ServiceController::class, 'store']);
+
+//----------------------- admin dashboard--------------------//

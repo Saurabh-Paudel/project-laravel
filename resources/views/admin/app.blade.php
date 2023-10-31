@@ -106,7 +106,7 @@
                with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
-                            <a href="dashboard" class="nav-link">
+                            <a href="/admin/dashboard" class="nav-link">
                                 <i class=" fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -114,7 +114,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="message" class="nav-link">
+                            <a href="/admin/message" class="nav-link">
                                 <i class=" fas fa-envelope"></i>
                                 <p>
                                     Messages

@@ -9,5 +9,5 @@ class Services extends Model
 {
     use HasFactory;
     protected $table = 'services';
-    protected $fillable = ['name', 'price', 'description'];
+    protected $fillable = ['name', 'price', 'description', 'image'];
 }
