@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="/admin/plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="/admin/plugins/summernote/summernote-bs4.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/admin/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="/admin/plugins/toastr/toastr.min.css">
     <!-- DataTables -->
     <link rel="stylesheet" href="/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -196,7 +200,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
         integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <!-- SweetAlert2 -->
+    <script src="/admin/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="/admin/plugins/toastr/toastr.min.js"></script>
     <!-- DataTables  & Plugins -->
     <script src="/admin/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

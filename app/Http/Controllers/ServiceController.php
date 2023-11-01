@@ -29,6 +29,7 @@ class ServiceController extends Controller
             'price' => $request->price,
             'description' => $request->description,
         ]);
+        session()->flash('success', 'Record was successfully updated.');
         return redirect('/admin/service');
     }
     public function create()
@@ -46,13 +47,16 @@ class ServiceController extends Controller
             'description' => $request->description,
             'image' => 'http://localhost:8000' . $imageurl,
         ]);
+        session()->flash('success', 'Record was successfully stored.');
         return redirect('/admin/service');
+
     }
 
     public function delete(Request $request, $id)
     {
         $service = Services::find($id);
         $service->delete();
+        session()->flash('success', 'Record was successfully deleted.');
         return redirect('/admin/service');
     }
 }
