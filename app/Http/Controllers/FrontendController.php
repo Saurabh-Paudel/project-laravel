@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactUsMessageReceived;
 use App\Models\Message;
 use App\Models\Services;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
@@ -38,7 +40,8 @@ class FrontendController extends Controller
             'message' => 'required',
         ]);
 
-        Message::create($validated);
+        $message = Message::create($validated);
+        Mail::to($request->email)->send(new ContactUsMessageReceived($message));
         Session::flash('success', 'Message saved successfully');
         return redirect()->back();
     }
