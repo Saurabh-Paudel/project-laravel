@@ -23,11 +23,15 @@ class ServiceController extends Controller
 
     public function update(Request $request, $id)
     {
+        $image = Storage::disk('local')->put('public/services', $request->image);
+        $imageurl = Storage::url($image);
+        $imagelocation = 'http://localhost:8000' . $imageurl;
         $service = Services::find($id);
         $service->update([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
+            'image' => $imagelocation,
         ]);
         session()->flash('success', 'Record was successfully updated.');
         return redirect('/admin/service');

@@ -41,6 +41,7 @@
                                             @endphp
                                             <th>ID</th>
                                             <th>Name</th>
+                                            <th>Image</th>
                                             <th>Price</th>
                                             <th>Description</th>
                                             <th>Action</th>
@@ -51,6 +52,8 @@
                                             <tr>
                                                 <td>{{ $id++ }}</td>
                                                 <td>{{ $item->name }}</td>
+                                                <td><img class="img-fluid bg-light rounded-circle p-2 mx-auto mb-4"
+                                                        src="{{ $item->image }}" style="width: 100px; height: 50px;"></td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->description }}</td>
                                                 <td><a href="/admin/service/{{ $item->id }}/edit"
