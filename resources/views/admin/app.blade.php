@@ -133,7 +133,16 @@
                                 </p>
                             </a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="fa-solid fa-sign-out"></i>
+                                <p>Logout</p>
+                            </a>
+                            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                            </form>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

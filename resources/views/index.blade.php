@@ -382,7 +382,8 @@
         <div class="container">
             <p>
                 &copy; <span id="displayDateYear"></span> All Rights Reserved By
-                <a href="https://html.design/">Free Html Templates</a>
+                <a href="https://html.design/">Free Html Templates</a>|<a href="/login"
+                    class="text-decoration-none">Admin</a>
             </p>
         </div>
     </footer>
